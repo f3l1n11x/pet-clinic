@@ -117,7 +117,8 @@ stage('Rollback'){
         sh "chmod +x deploy.sh"
         sh "./deploy.sh prod $PRODUCTION_LATEST"
     }
-}stage('Tag Production Package'){
+}
+stage('Tag Production Package'){
     when {
         expression { env.PRODUCTION_OK == 'true'}
     }
